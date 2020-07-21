@@ -1,0 +1,51 @@
+<header class="main-header">
+  <div class="search-box">
+    <input type="text" class="form-control" placeholder="&#xF002; Search Contacts" />
+  </div>
+</header>
+
+<div class="add-new align-items-center p-2 d-flex" routerLink="/addcontact">
+  <h6 class="m-0">Add New Contacts</h6>
+  <i class="fa fa-plus ml-auto"></i>
+</div>
+
+<section class="latest-conctacts">
+  <header class="latest-contacts--header pl-2 py-1">
+    <h6 class="m-0"> Latest Contacts </h6>
+  </header>
+  <ul class="list-unstyled latest-conctacts--list mb-0">
+    <li *ngFor="let contact of filteredRecentContacts" class="py-2 pl-3 pr-3">
+      <a class="media">
+        <img class="mr-3" [src]="contact.image" onerror="this.src='assets/images/avatar.jpg';" alt="">
+        <div class="media-body">
+          <h5 class="m-0 font-weight-normal">{{contact.firstName}} {{contact.lastName}}</h5>
+          <span>{{contact.mobileNumber}}</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</section>
+<!-- contactsGroup -->
+<section class="contacts position-relative">
+  <article class="contacts-group" *ngFor="let group of contactsGroup">
+    <header class="contacts-group--header pl-2 py-1">
+      <h6 class="m-0" [id]="group.group">{{group.group}}</h6>
+    </header>
+    <ul class="list-unstyled contacts-group--list mb-0">
+      <li *ngFor="let groupChildren of group.children" class="py-2 pl-3 pr-3">
+        <a class="media">
+          <img class="mr-3" [src]="groupChildren.image != null ? groupChildren.image : 'assets/images/avatar.jpg'"
+            onerror="this.src='assets/images/avatar.jpg';" alt="">
+          <div class="media-body">
+            <h5 class="m-0 font-weight-normal">{{groupChildren.firstName}} {{groupChildren.lastName}}</h5>
+            <span *ngIf="groupChildren.mobileNumber != null">{{groupChildren.mobileNumber}}</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </article>
+  <ul class="list-unstyled mb-0 alphabet position-fixed">
+    <li *ngFor="let group of contactsGroup; let i = index" ngxScrollTo="#{{group.group}}">{{group.group}}</li>
+  </ul>
+
+</section>

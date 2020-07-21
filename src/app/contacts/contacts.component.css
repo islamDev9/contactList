@@ -1,0 +1,70 @@
+.search-box {
+  position: relative;
+  background-color: #ddd;
+  padding: 10px 25px;
+  margin-top: 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.search-box .form-control {
+  border-radius: 20px;
+  font-family: Arial, FontAwesome;
+}
+
+.search-box .form-control::placeholder {
+  text-align: center;
+}
+
+.search-box .form-control:-ms-input-placeholder {
+  text-align: center;
+}
+
+.add-new {
+  background-color: #f1f1f1;
+  color: #7b7b7b;
+  border-bottom: 1px solid #7b7b7b;
+  cursor: pointer;
+}
+
+.latest-conctacts .latest-contacts--header,
+.contacts-group .contacts-group--header {
+  background-color: #f1f1f1;
+}
+
+.latest-conctacts--list li,
+.contacts-group--list li {
+  border-bottom: 2px solid #ddd;
+}
+
+.latest-conctacts--list li:last-child {
+  border-bottom: none;
+}
+
+.latest-conctacts--list li .media,
+.contacts-group--list li .media {
+  color: #7b7b7b;
+}
+
+.latest-conctacts--list li .media img,
+.contacts-group--list li .media img {
+  width: 55px;
+  height: 55px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+}
+
+.alphabet {
+  top: 45%;
+  right: 2%;
+}
+
+.alphabet li {
+  color: #7b7b7b;
+  cursor: pointer;
+}
+
+.alphabet li:hover {
+  /* font-size: 18px; */
+  color: #000;
+}

@@ -1,0 +1,49 @@
+<header class="add-new--header">
+  <h3 class="m-0 font-weight-normal p-2"> Add a New Contact</h3>
+</header>
+
+<form autocomplete="off" #addNewForm="ngForm" (ngSubmit)="submitContact(addNewForm)">
+  <div class="form-group">
+    <div class="upload-btn" id="upload-photo">
+      <img [src]="imgURL || 'assets/images/avatar.jpg'" alt="" class="img-fluid" />
+      <input #file class="add-img" type="file" accept="image/*" (change)="preview(file.files)" name="image" ngModel />
+      <label class="mb-0"> Add Photo</label>
+    </div>
+  </div>
+
+  <div class="form-group position-relative mb-5">
+    <input class="form-control" type="text" name="firstName" required ngModel />
+    <label class="mb-0"> First name </label>
+  </div>
+  <div class="form-group position-relative mb-5">
+    <input class="form-control" type="text" name="lastName" required ngModel />
+    <label class="mb-0"> Last name </label>
+  </div>
+
+  <div class="form-row mb-5">
+    <div class="form-group col-3 select-code">
+      <select class="form-control">
+        <option selected> +20 </option>
+        <option> +44 </option>
+        <option> +91 </option>
+        <option> +966 </option>
+      </select>
+    </div>
+    <div class="form-group col-9">
+      <input class="form-control" type="number" name="mobileNumber" required ngModel />
+    </div>
+  </div>
+
+  <div class="form-group position-relative mb-5">
+    <input class="form-control" type="email" name="email" ngModel />
+    <label class="mb-0"> Email address </label>
+  </div>
+
+  <div class="form-group text-center">
+    <button type="submit" class="btn btn-save"> Add Contact </button>
+  </div>
+  <div class="form-group text-center">
+    <button type="reset" class="btn btn-cancel" routerLink="/contacts"> Cancel </button>
+  </div>
+
+</form>
